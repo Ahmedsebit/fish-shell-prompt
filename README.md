@@ -4,11 +4,16 @@ Some pretty neat Fish shell prompt configs
 ## Requirements
 - You should have `fish` installed
 - You should have `omf` ([oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)) installed
+- These configurations have been tested on iTerm
 
 ## How to use
--> Make a copy of your `fish_prompt.fish` script file, located at `~/.config/fish/functions/fish_prompt.fish` (just in case something goes wrong)
--> replace the conents of the `fish+prompt.fish` script with the script in this repo.
--> run `. ~/.config/fish/functions/fish_prompt.fish` to reload the file and voila!
+- Make a copy of your `fish_prompt.fish` script file, located at `~/.config/fish/functions/fish_prompt.fish` (just in case something goes wrong)
+
+- replace the conents of the `fish+prompt.fish` script with the script in this repo.
+
+- run `. ~/.config/fish/functions/fish_prompt.fish` to reload the file and voila!
+
+You can import the `fishcloud.itermcolors` preset into iTerm to in order to get the exact colors used. You can also customize it after importing.
 
 ## Themes
 So far there's only one theme, but stay tuned for more!
