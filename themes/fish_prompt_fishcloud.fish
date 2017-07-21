@@ -21,17 +21,23 @@ end
 
 function fish_prompt
   set -l last_status $status
-  set -l cyan (set_color -o cyan)
-  set -l yellow (set_color -o yellow)
-  set -l red (set_color -o red)
-  set -l blue (set_color -o blue)
-  set -l green (set_color -o green)
+  set -l cyan (set_color -d cyan)
+  set -l brcyan (set_color -d brcyan)
+  set -l yellow (set_color yellow)
+  set -l bryellow (set_color -o bryellow)
+  set -l red (set_color red)
+  set -l brred (set_color brred)
+  set -l blue (set_color blue)
+  set -l brblue (set_color -o brblue)
+  set -l green (set_color green)
+  set -l brgreen (set_color brgreen)
   set -l normal (set_color normal)
   set -l grey (set_color grey)
   set -l white (set_color white)
+  set -l brwhite (set_color -o brwhite)
 
   if test $last_status = 0
-      set arrow "$cyan$CLOUD"
+      set arrow (set_color -o brwhite)"$CLOUD"
   else
       set arrow "$red$CLOUD"
   end
@@ -41,13 +47,13 @@ function fish_prompt
         set -g VIRTUAL_ENV_DISABLE_PROMPT true
     end
   if test $VIRTUAL_ENV
-        printf "(%s)" (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
+        printf "$brwhite(%s$brwhite)" (set_color brblue)(basename $VIRTUAL_ENV)(set_color normal)
     end
   set -l cwd (basename (prompt_pwd))
 
   if [ (_git_branch_name) ]
-    set -l git_branch $cyan(_git_branch_name)
-    set git_info "[$git_branch$green]"
+    set -l git_branch (set_color -o brwhite)(_git_branch_name)
+    set git_info "[$git_branch$bryellow]"
 
     if [ (_is_git_dirty) ]
       set -l dirty "$yellow ✗"
@@ -58,6 +64,6 @@ function fish_prompt
     end
   end
 
-  echo -n -s ' ' $arrow '  ' $green$cwd ' ' $git_info $normal ' '
+  echo -n -s ' ' $arrow '  ' $bryellow$cwd ' ' $git_info ' ' $brwhite
 end
 
