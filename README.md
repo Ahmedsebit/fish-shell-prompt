@@ -1,6 +1,15 @@
 # fish-shell-prompt
 Some pretty neat Fish shell prompt configs
 
+## Requirements
+- You should have `fish` installed
+- You should have `omf` ([oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)) installed
+
+## How to use
+-> Make a copy of your `fish_prompt.fish` script file, located at `~/.config/fish/functions/fish_prompt.fish` (just in case something goes wrong)
+-> replace the conents of the `fish+prompt.fish` script with the script in this repo.
+-> run `. ~/.config/fish/functions/fish_prompt.fish` to reload the file and voila!
+
 ## Themes
 So far there's only one theme, but stay tuned for more!
 ### fishcloud
